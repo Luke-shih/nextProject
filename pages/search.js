@@ -63,6 +63,8 @@ function Search({ router, repos }) {
         if(!isServer) cacheArray(repos.items)
     })
     
+    const items;
+    
     return (
         
         <div className="root">
