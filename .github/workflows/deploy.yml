@@ -27,26 +27,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
         
-    - run: npm install @zeit/next-bundle-analyzer
-    - run: npm install @zeit/next-css
-    - run: npm install antd
-    - run: npm install atob
-    - run: npm install babel-plugin-import
-    - run: npm install babel-plugin-styled-components
-    - run: npm install cross-env
-    - run: npm install github-markdown-css
-    - run: npm install ioredis
-    - run: npm install koa-body
-    - run: npm install koa-router
-    - run: npm install koa-session
-    - run: npm install lru-cache
-    - run: npm install markdown-it
-    - run: npm install moment
-    - run: npm install react-redux
-    - run: npm install redux
-    - run: npm install redux-devtools-extension
-    - run: npm install redux-thunk
-    - run: npm install styled-components
+    - run: npm install
     - run: npm ci
     - run: npm run build
     - run: npm run export
@@ -54,6 +35,5 @@ jobs:
     - name: Deploy 🚀
       uses: JamesIves/github-pages-deploy-action@4.1.5
       with:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         branch: gh-pages # The branch the action should deploy to.
-        folder: out # The folder the action should deploy.
+        folder: build # The folder the action should deploy.
