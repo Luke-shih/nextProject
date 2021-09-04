@@ -7,7 +7,6 @@ const MDRenderer = dynamic(
         loading: () => <p>Loading</p>
     }
 )
-const githubAuth;
 function Detail ({ readme }) { 
     return <MDRenderer content={readme.content} isBase64={true} />
 }
