@@ -1,9 +1,9 @@
 import dynamic from 'next/dynamic'
 import withRepoBasic from "../../components/with-repo-basic"
 import api from '../../lib/api'
-import { useState } from 'react'
 
-const [ githubAuth, setGithubState ] = useState(0)
+const githubAuth = null;
+
 const MDRenderer = dynamic(
     () => import('../../components/MarkdownRender'),
     {
@@ -15,6 +15,9 @@ function Detail ({ readme }) {
 }
 
 Detail.getInitialProps = async ({ ctx: { query: { owner, name }, req, res }}) => {
+    if(githubAuth === 'undefined') {
+        this.setState({})
+    }
     const readmeResp = await api.request({
         url: `/repos/${owner}/${name}/readme`
     }, req, res)
