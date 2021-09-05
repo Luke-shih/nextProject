@@ -1,7 +1,7 @@
 import dynamic from 'next/dynamic'
 import withRepoBasic from "../../components/with-repo-basic"
 import api from '../../lib/api'
-const githubAuth;
+ const [ githubAuth, setGithubState ] = useState()
 const MDRenderer = dynamic(
     () => import('../../components/MarkdownRender'),
     {
