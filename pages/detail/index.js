@@ -2,15 +2,14 @@ import dynamic from 'next/dynamic'
 import withRepoBasic from "../../components/with-repo-basic"
 import api from '../../lib/api'
 
-const githubAuth = null;
-
 const MDRenderer = dynamic(
     () => import('../../components/MarkdownRender'),
     {
         loading: () => <p>Loading</p>
     }
 )
-function Detail ({ readme }) { 
+function Detail ({ readme }) {
+    const githubAuth = null;
     return <MDRenderer content={readme.content} isBase64={true} />
 }
 
